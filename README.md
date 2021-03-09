@@ -36,6 +36,17 @@ We will explore the charging phase of Li-ion batteries to start with.
 whether high or low. Add this capability.
 1. Add the ability to plug-in different reporters to this code.
 
+##Extensions
+1. Accept input in different units
+   Provided the support to have charging temperature in three
+   different units (Celsius, Kelvin & Fahrenheit).
+2. Support a language in addition to English
+   Provided the support for bilingual report/alerts for BMS system
+   
+Note: Fallback Handling mechanism is provided where charging temperature
+& Language will take default values as Celsius, English for incorrect or
+unsupported inputs.
+
 ## The Exploration
 
 How well does our code hold-out in the rapidly evolving EV space?

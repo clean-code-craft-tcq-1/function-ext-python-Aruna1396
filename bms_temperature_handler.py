@@ -14,7 +14,7 @@ def set_charging_temperature_unit(temperature_unit):
 
 
 def perform_temperature_conversion_to_celsius(charging_temperature):
-    if charging_temperature_unit is 'Kelvin':
+    if charging_temperature_unit == 'Kelvin':
         return charging_temperature - KELVIN_CONSTANT
     else:
         return (charging_temperature - 32) * (5 / 9)
@@ -22,7 +22,7 @@ def perform_temperature_conversion_to_celsius(charging_temperature):
 
 def perform_temperature_processing(temperature_unit, charging_temperature):
     set_charging_temperature_unit(temperature_unit)
-    if charging_temperature_unit is not 'Celsius':
+    if charging_temperature_unit != 'Celsius':
         return perform_temperature_conversion_to_celsius(charging_temperature)
     else:
         return charging_temperature

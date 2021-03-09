@@ -27,7 +27,6 @@ def is_battery_overall_health_status_normal(battery_health_parameters, selected_
     battery_health_parameters['charging_temperature'] = temp.perform_temperature_processing(temperature_unit,
                                                                                             battery_health_parameters[
                                                                                                 'charging_temperature'])
-    print(battery_health_parameters['charging_temperature'])
     out_of_range_battery_parameters = collect_out_of_range_battery_parameters(battery_health_parameters)
     if len(out_of_range_battery_parameters) != 0:
         battery_status_normal = False
