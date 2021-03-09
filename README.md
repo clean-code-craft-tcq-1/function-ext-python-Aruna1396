@@ -36,7 +36,7 @@ We will explore the charging phase of Li-ion batteries to start with.
 whether high or low. Add this capability.
 1. Add the ability to plug-in different reporters to this code.
 
-##Extensions
+## Extensions
 1. Accept input in different units
    Provided the support to have charging temperature in three
    different units (Celsius, Kelvin & Fahrenheit).
