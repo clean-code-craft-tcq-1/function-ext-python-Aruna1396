@@ -5,10 +5,10 @@ SUPPORTED_LANGUAGES = ['English', 'German']
 
 
 def set_language_for_report_and_alerts(selected_language):
+    global BMS_language
     if selected_language not in SUPPORTED_LANGUAGES:
         print('\n ALERT!!! Report is not available in', selected_language, '!!!', 'Switching to Default Language')
     else:
-        global BMS_language
         BMS_language = selected_language
 
 

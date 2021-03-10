@@ -1,14 +1,14 @@
 SUPPORTED_TEMPERATURE_UNITS = ['Celsius', 'Fahrenheit', 'Kelvin']
 KELVIN_CONSTANT = 273.15
-charging_temperature_unit = 'Celsius'
+charging_temperature_unit = None
 
 
 def set_charging_temperature_unit(temperature_unit):
+    global charging_temperature_unit
+    charging_temperature_unit = 'Celsius'
     if temperature_unit not in SUPPORTED_TEMPERATURE_UNITS:
         print('\n ALERT!!! Charging temperature in', temperature_unit, ' is not supported!!!',
               'Proceeding with default Celsius Unit')
-        global charging_temperature_unit
-        charging_temperature_unit = 'Celsius'
     else:
         charging_temperature_unit = temperature_unit
 
