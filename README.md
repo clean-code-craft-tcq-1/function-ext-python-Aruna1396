@@ -47,6 +47,11 @@ Note: Fallback Handling mechanism is provided where charging temperature
 & Language will take default values as Celsius, English for incorrect or
 unsupported inputs.
 
+## Consolidation
+
+Function "collect_out_of_range_battery_parameters" consolidates the list of abnormal battery parameters
+and this is consolidated report is printed in a console with function "report_consolidated_battery_breach_status"
+
 ## The Exploration
 
 How well does our code hold-out in the rapidly evolving EV space?

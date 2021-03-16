@@ -1,4 +1,4 @@
-import bms_alerter
+import bms_reporter
 import bms_temperature_handler as temp
 
 battery_parameters_normal_range = {'charging_temperature': {'min': 0, 'max': 45},
@@ -21,16 +21,16 @@ def collect_out_of_range_battery_parameters(battery_health_parameters):
     return out_of_range_parameters
 
 
-def is_battery_overall_health_status_normal(battery_health_parameters, selected_language, temperature_unit):
+def is_battery_overall_health_ok(battery_health_parameters, selected_language, temperature_unit):
     battery_status_normal = True
-    bms_alerter.set_language_for_report_and_alerts(selected_language)
+    bms_language = bms_reporter.set_bms_language(selected_language)
     battery_health_parameters['charging_temperature'] = temp.perform_temperature_processing(temperature_unit,
                                                                                             battery_health_parameters[
                                                                                                 'charging_temperature'])
     out_of_range_battery_parameters = collect_out_of_range_battery_parameters(battery_health_parameters)
     if len(out_of_range_battery_parameters) != 0:
         battery_status_normal = False
-        bms_alerter.report_severity_of_battery_health_breach(out_of_range_battery_parameters)
+        bms_reporter.report_consolidated_battery_breach_status(out_of_range_battery_parameters,bms_language)
     else:
-        bms_alerter.report_normal_health_status()
+        bms_reporter.report_normal_health_status(bms_language)
     return battery_status_normal
